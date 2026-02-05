@@ -34,7 +34,7 @@ jobs:
             --registry $ACR_NAME \
             --image $IMAGE_NAME:latest \
             --image $IMAGE_NAME:$IMAGE_TAG \
-            .
+            Play.Frontend
 
       - name: Get AKS Credentials
         run: |
