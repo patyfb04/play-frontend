@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: play-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: play-frontend
+  template:
+    metadata:
+      labels:
+        app: play-frontend
+    spec:
+      containers:
+        - name: play-frontend
+          image: worldtripapp.azurecr.io/play-frontend:IMAGE_TAG_PLACEHOLDER
+          ports:
+            - containerPort: 80
