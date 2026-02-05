@@ -28,9 +28,9 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Build and Push Docker Image to ACR
+        working-directory: Play.Frontend
         run: |
           IMAGE_TAG=$(echo $GITHUB_SHA | cut -c1-7)
-          working-directory: Play.Frontend
           az acr build \
             --registry $ACR_NAME \
             --image $IMAGE_NAME:latest \
