@@ -22,13 +22,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Debug repo structure
-        run: |
-          echo "PWD:"
-          pwd
-          echo "Listing:"
-          ls -R .
-
       - name: Azure Login
         uses: azure/login@v2
         with:
@@ -59,12 +52,3 @@ jobs:
       - name: Deploy to AKS
         run: |
           kubectl apply -f $K8S_MANIFEST_PATH
-
-      # Optional: Deploy to Azure Container Apps (uncomment if needed)
-      # - name: Deploy to Azure Container Apps
-      #   run: |
-      #     IMAGE_TAG=$(echo $GITHUB_SHA | cut-c1-7)
-      #     az containerapp update \
-      #       --name $CONTAINER_APP_NAME \
-      #       --resource-group $RESOURCE_GROUP \
-      #       --image $ACR_NAME.azurecr.io/$IMAGE_NAME:$IMAGE_TAG

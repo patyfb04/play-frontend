@@ -3,14 +3,14 @@ FROM node:18 AS build
 WORKDIR /app
 
 # Install dependencies
-COPY play.app/package*.json ./
+COPY play-app/package*.json ./
 RUN npm install
 
 # Copy the entire app
-COPY play.app/ ./
+COPY play-app/ ./
 
 # Replace runtime config if needed
-COPY play.app/public/config.js public/config.js
+COPY play-app/public/config.js public/config.js
 
 # Build the production bundle
 RUN npm run build
