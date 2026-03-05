@@ -55,12 +55,7 @@ export class Home extends Component {
         </ul>
         <p>You can also</p>
         <ul>
-          <li>
-            Manage the{" "}
-            <a href={window.RABBITMQ_URL} target="_blank" rel="noreferrer">
-              message queues
-            </a>
-          </li>
+          <li>Manage the message queues</li>
           <li>
             Explore the Open API documentation:
             <ul>
