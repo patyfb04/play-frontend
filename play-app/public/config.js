@@ -1,4 +1,4 @@
-window.IDENTITY_SERVICE_URL = "http://4.174.167.15/api/identity";
+window.IDENTITY_SERVICE_URL = "http://play-identity";
 window.USERS_API_URL = `${window.IDENTITY_SERVICE_URL}/users`;
 
 window.CATALOG_SERVICE_URL = "/api/catalog";
